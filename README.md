@@ -22,3 +22,10 @@ Essa solução deve abrangir:
 # Restrições de acesso
 - Somente usuários administradores poderão acessar o cadastro de leilões
 - Nenhum serviço pode ser acessado após o logout da aplicação
+
+# Instruções para funcionamento:
+
+Para utilizar essa aplicação são necessárias as execuções dos comandos:
+
+npm install
+npm start
