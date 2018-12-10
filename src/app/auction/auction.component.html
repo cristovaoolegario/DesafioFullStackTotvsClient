@@ -1,0 +1,41 @@
+<h2>Cadastro de Leilão</h2>
+<form [formGroup]="auctionForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Nome do Leilão</label>
+        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">O nome do Leilão é obrigatório</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="initialvalue">Valor inicial</label>
+        <input type="number" formControlName="initialvalue" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.initialvalue.errors }" />
+        <div *ngIf="submitted && f.initialvalue.errors" class="invalid-feedback">
+            <div *ngIf="f.initialvalue.errors.required">Um valor inicial é obrigatório</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="openingdate">Data de abertura</label>
+        <input type="datetime-local" formControlName="openingdate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.openingdate.errors }" />
+        <div *ngIf="submitted && f.openingdate.errors" class="invalid-feedback">
+            <div *ngIf="f.openingdate.errors.required">Uma data de abertura é obrigatória</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="terminationdate">Data de termino</label>
+        <input type="datetime-local" formControlName="terminationdate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.terminationdate.errors }" />
+        <div *ngIf="submitted && f.terminationdate.errors" class="invalid-feedback">
+            <div *ngIf="f.terminationdate.errors.required">Uma data de abertura é obrigatória</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="wasused">É um item usado</label>
+        <input type="checkbox" formControlName="wasused" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.wasused.errors }" />
+        <div *ngIf="submitted && f.wasused.errors" class="invalid-feedback"></div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Login</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </div>
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+</form>
