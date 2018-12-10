@@ -15,7 +15,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         return of(null).pipe(mergeMap(() => {
 
             // authenticate
-            if (request.url.endsWith('/users') && request.method === 'POST') {
+            if (request.url.endsWith('/users/autenticate') && request.method === 'POST') {
                 if (request.body.username === testUser.username && request.body.password === testUser.password) {
                     // if login details are valid return 200 OK with a fake jwt token
                     let body = {
