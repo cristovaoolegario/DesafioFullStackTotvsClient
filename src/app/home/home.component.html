@@ -1,9 +1,8 @@
 ﻿<h1>Home</h1>
-<p>You're logged in with Angular 6 & JWT!!</p>
+<p>Listagem de Leilões cadastrados</p>
 <div>
-    Users from secure api end point:
     <ul>
-        <div *ngFor="let user of users">{{user.username}} {{user.cpf}}</div>
+        <div *ngFor="let auction of auctions">{{auction.name}} {{auction.initalvalue}}</div>
     </ul>
 </div>
 <p><a [routerLink]="['/login']">Logout</a></p>
